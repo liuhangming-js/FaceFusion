@@ -70,12 +70,16 @@ def parse_args() -> None:
 	os.makedirs(output_folder, exist_ok=True)
 
 	# 最终的输出文件路径
-	output_path = os.path.join(output_folder, 'output_filename.extension')
+	output_path = output_folder
+	# output_path = os.path.join(output_folder, 'output_filename.extension')
+
+	source_path = "/home/featurize/work/1.jpg"
+	target_path = "/home/featurize/work/test.mp4"
 
 	facefusion.globals.source_path = args.source_path
 	facefusion.globals.target_path = args.target_path
 	
-	facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, facefusion.globals.target_path, output_path)
+	facefusion.globals.output_path = normalize_output_path(source_path, target_path, output_path)
 	# facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, facefusion.globals.target_path, args.output_path)
 
 	facefusion.globals.frame_processors = args.frame_processors
