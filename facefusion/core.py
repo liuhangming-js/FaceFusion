@@ -60,25 +60,14 @@ def parse_args() -> None:
 
 	args = program.parse_args()
 
-	# 获取项目根目录路径
-	project_root = os.path.dirname(os.path.abspath(__file__))  # 假设脚本文件位于项目根目录中
-
-	# 设置输出路径为项目根目录下的一个文件夹（例如output文件夹）
-	output_folder = os.path.join(project_root, 'output')
-
-	# 确保输出文件夹存在，如果不存在则创建
-	os.makedirs(output_folder, exist_ok=True)
-
-	# 最终的输出文件路径
-	output_path = output_folder
-	# output_path = os.path.join(output_folder, 'output_filename.extension')
-
-	source_path = "/home/featurize/work/1.jpg"
+	output_path = "/home/featurize/work/output"
+	# source_path = "/home/featurize/work/1.jpg"
 	target_path = "/home/featurize/work/test.mp4"
 
 	facefusion.globals.source_path = args.source_path
-	facefusion.globals.target_path = args.target_path
-	
+	facefusion.globals.target_path = target_path
+	# facefusion.globals.target_path = args.target_path
+
 	facefusion.globals.output_path = normalize_output_path(source_path, target_path, output_path)
 	# facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, facefusion.globals.target_path, args.output_path)
 
