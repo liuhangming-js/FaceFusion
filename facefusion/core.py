@@ -66,11 +66,12 @@ def parse_args() -> None:
 	target_path = "/home/featurize/test.mp4"
 
 	# origin
-	# facefusion.globals.source_path = args.source_path
+	facefusion.globals.source_path = args.source_path
 	# facefusion.globals.target_path = args.target_path
+    
+	facefusion.globals.target_path = target_path
 
-	facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, target_path, output_path)
-	# facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, facefusion.globals.target_path, args.output_path)
+	facefusion.globals.output_path = normalize_output_path(facefusion.globals.source_path, facefusion.globals.target_path, args.output_path)
 
 	facefusion.globals.frame_processors = args.frame_processors
 	facefusion.globals.ui_layouts = args.ui_layouts
